@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+    <title>Sensor Data Management Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hanbing master project">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+
+    <script src="libs/jquery-1.10.2.min.js"></script>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/default.css">
+    <script src="libs/underscore-1.5.2.min.js"></script>
+    <script src="libs/marked.js"></script><!--https://github.com/chjj/marked/-->
+    <script src="libs/analytics.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/login.js"></script>
+</head>
+<body>
+    <div class="container" id="wrap">
+        <header>
+            <h1>Sensor Data Management Platform</h1>
+        </header>
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Hanbing</a>
+                    </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active" id="Home"><a href="#">Home</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Data Chart <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Temperature</a></li>
+                                <li><a href="#">Humidity</a></li>
+                                <li><a href="#">Gas</a></li>
+                                <li><a href="#">PM2.5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Personal Data</a></li>
+                        <li><a href="#">Contact Me</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="Register"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li id="Login"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+        <div id="welcome">
+            <span class='myuser'></span>
+            <p class="logoff glyphicon glyphicon-circle-arrow-right" id='logoff'><a href="#">logoff</a></p>
+        </div>
+
+        <!--Home Tag -->
+        <section id="Homepage">
+            <div class="title">
+                <h2>Get to know more around you????<h2>
+            </div>
+            <div class="fourchoice-row">
+                <div class="fourchoices-left">
+                    <h2>Temperature </h2>
+                    <img src="images/temp.png" width="280" height="230">
+                </div>
+                <div class="fourchoices-right">
+                    <h2>Humidity </h2>
+                    <img src="images/hum.png" width="280" height="230">
+                </div>
+            </div>
+            <div class="fourchoice-row">
+                <div class="fourchoices-left">
+                    <h2>Gas </h2>
+                    <img src="images/gas.png" width="280" height="230">
+                </div>
+                <div class="fourchoices-right">
+                    <h2>PM2.5 </h2>
+                    <img src="images/pm2.5.png" width="280" height="230">
+                </div>
+            </div>
+        </section>
+
+        <!--Register Tag -->
+        <section id="Registerpage">
+        <div class="container">
+          <h1>Have an account right now!!!</h1>
+          <form id="regform" class="dataentry" method="post" action="">
+            <label>Username</label>
+            <input id="username" type="text" name="username">
+            <label>Password</label>
+            <input id="password" type="password" name="password">
+            <label>Password Confirmation</label>
+            <input id="passconfirm" type="password" name="passconfirm">
+            <input id="regsubmit" class="btn btn-primary" type="submit" value="Register" disabled>
+            <div id="error"></div>
+          </form>
+        </div>
+       </section>
+
+       <!--Login Tag -->
+       <section id="Loginpage">
+           <div class="container">
+             <h2>Welcome Home, Login Please</h2>
+             <form id="loginform" class="dataentry" method="post" action="">
+        			<label>Username</label>
+        			<input id="username_login"type="text" name="username">
+        			<label>Password</label>
+        			<input id="password_login" type="password" name="password">
+        			<input id="login" class="btn btn-primary" type="submit" value="Login">
+        			<div id="error_login"></div>
+		        </form>
+           </div>
+       </section>
+
+     </div>
+</body>
+</html>

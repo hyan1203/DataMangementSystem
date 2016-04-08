@@ -1,0 +1,223 @@
+@import url(bootstrap.min.css);
+@import url(bootstrap-theme.min.css);
+/*
+Google WebFont's imports
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+@import url(http://fonts.googleapis.com/css?family=Habibi);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../fonts/OpenSans-Semibold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/OpenSans-Italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(../fonts/UbuntuMono-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Habibi';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Habibi'), local('Habibi-Regular'), url(../fonts/Habibi-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(../fonts/Roboto-Thin.woff) format('woff');
+}
+
+/*!
+  Ionicons, v1.4.1
+  Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
+  https://twitter.com/benjsperry  https://twitter.com/ionicframework
+  MIT License: https://github.com/driftyco/ionicons
+
+  This is a subset of Ionicons, only uses what is needed.
+*/
+@font-face {
+    font-family: "Ionicons";
+    src: url("../fonts/ionicons.eot?v=1.4.1");
+    src: url("../fonts/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"),
+         url("../fonts/ionicons.ttf?v=1.4.1") format("truetype"),
+         url("../fonts/ionicons.woff?v=1.4.1") format("woff"),
+         url("../fonts/ionicons.svg?v=1.4.1#Ionicons") format("svg"); font-weight: normal; font-style: normal;
+}
+
+[class*="ion-"] {
+    font-family: 'Ionicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+body{
+    background: url("../images/background1.jpg");
+    background-size: cover;
+}
+
+#wrap {
+      background: #ECECEC;
+      border-left: 1px solid #242424;
+      border-right: 1px solid #242424;
+      box-shadow: 0px 0px 6px 10px rgba(0, 0, 0, 0.18);
+      padding: 1em 0 0 0;
+      min-height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      width: 80vw;
+    }
+header {
+    margin: 0 auto;
+    padding: 0;
+}
+
+header h1 {
+    color: #00014;
+    font: normal small-caps 200 3em 'Roboto', sans-serif;
+    letter-spacing: 0.075em;
+    margin: 0 0 0 .25em;
+    text-shadow: .1em .1em 3px #5959FF;
+    white-space: nowrap;
+}
+
+.navbar-inverse .navbar-inner {
+	background-color: #CCCCCC;
+	background-image: none;
+	border-color: #CCCCCC;
+}
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+	color: #4C4C4C;
+	text-shadow:none;
+}
+
+.navbar-inverse .navbar-nav .active a{
+	background-image: linear-gradient(to bottom, blue 0, #0f0f0f 100%);
+}
+
+#welcome{
+	text-align: right;
+	color: #FF99CC;
+	font: bold small-caps 200 1em 'Roboto', sans-serif;
+	margin: -1em 1em 0 0;
+
+}
+#welcome .logoff a:hover{
+  text-decoration:underline;
+  color: #5959FF;
+}
+/*Home Tag*/
+#Homepage{
+	margin: 1em 0 0 0;
+}
+#Homepage .title h2{
+	font: normal small-caps 200 3em 'Roboto', sans-serif;
+	margin: 0 0 0 1em;
+	text-shadow: .1em .1em 3px #FF4719;
+	color: #00014;
+}
+#Homepage .fourchoice-row{
+	  width: 90%;
+    margin: 0 auto;
+
+}
+
+#Homepage .fourchoices-left{
+	  border: 1px solid #ccc;
+    border-radius: .5em;
+    cursor: hand;
+    cursor: pointer;
+    clear: both;
+    margin: 1em 2em auto;
+    min-height: 7em;
+    padding: .5em;
+    display:inline-block;
+    transition: all .5s linear;
+}
+
+#Homepage .fourchoices-right{
+	  border: 1px solid #ccc;
+    border-radius: .5em;
+    cursor: hand;
+    cursor: pointer;
+    clear: both;
+    margin: 1em 2em auto;
+    min-height: 7em;
+    padding: .5em;
+    display:inline-block;
+    transition: all .5s linear;
+}
+#Homepage .fourchoices-left:hover,
+#Homepage .fourchoices-right:hover{
+    background: #B2FFFF;
+    border: 1px solid #777;
+}
+
+#Homepage h2{
+	margin: -.2em 0 0 0;
+}
+
+/*Register Page*/
+#Registerpage .dataentry {
+	border: 1px dashed #B2B2B2;
+	border-radius: 4px;
+	margin: 0 auto 80px;
+	padding: 10px;
+	width: 196px;
+}
+
+#Registerpage h1{
+  font: normal small-caps 200 3em 'Roboto', sans-serif;
+  text-align: center;
+  color: #5959FF;
+}
+#Registerpage #error > span {
+    color: red;
+}
+
+/*Login Page*/
+#Loginpage .dataentry {
+	border: 1px dashed #B2B2B2;
+	border-radius: 4px;
+	margin: 0 auto 80px;
+	padding: 10px;
+	width: 196px;
+}
+
+#Loginpage h2{
+  font: normal small-caps 200 3em 'Roboto', sans-serif;
+  text-align: center;
+  color: #5959FF;
+}
+#Loginpage #error > span {
+    color: red;
+}
