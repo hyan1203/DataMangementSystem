@@ -221,3 +221,18 @@ header h1 {
 #Loginpage #error > span {
     color: red;
 }
+
+#Managementpage h2{
+  font: normal small-caps 200 3em 'Roboto', sans-serif;
+}
+#Managementpage #managementform{
+  border-style: dashed;
+  border-color: gray;
+  border-width: 2px;
+}
+
+#Managementpage .btn-default{
+  margin: 10px 0 0 63px;
+  width: 100px;
+}
+

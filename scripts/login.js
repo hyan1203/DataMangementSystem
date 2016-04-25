@@ -34,5 +34,6 @@ $(document).ready(function() {
       welcome = null;
       $('#welcome span').html(null);
       $(this).hide();
+      $('section').hide().filter("#Homepage").show();
     });
 });
