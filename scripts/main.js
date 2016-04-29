@@ -21,5 +21,5 @@ $(document).ready(function() {
         $(this).addClass("active");
         id = "#"+$(this).attr('id')+"page";
         $('section').hide().filter(id).show();
-    })
+    });
 });

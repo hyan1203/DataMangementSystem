@@ -34,6 +34,8 @@ $(document).ready(function() {
       welcome = null;
       $('#welcome span').html(null);
       $(this).hide();
+      $(".navbar-nav li").filter(".active").removeClass("active");
+      $(".navbar-nav li").filter('#Home').addClass("active");
       $('section').hide().filter("#Homepage").show();
     });
 });

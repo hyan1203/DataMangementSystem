@@ -21,6 +21,7 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/register.js"></script>
     <script src="scripts/login.js"></script>
+    <script src="scripts/search.js"></script>
 </head>
 <body>
     <div class="container" id="wrap">
@@ -45,7 +46,7 @@
                             </ul>
                         </li>
                         <li id="Management"><a href="#">Personal Data</a></li>
-                        <li><a href="#">Contact Me</a></li>
+                        <li id="Contact"><a href="#">Contact Me</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li id="Register"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -123,48 +124,53 @@
        <section id="Managementpage">
          <div class="container">
            <h2>Data Management</h2>
-           <form class="form-horizontal" id="managementform" role='form'>
+           <form class="form-horizontal dataentry" id="managementform" method="post" action="">
              <div class="form-group">
                <label class="control-label col-sm-2" for="startingdate">Starting Date:</label>
                <div class="col-sm-2">
-                 <input type="date" class="form-control" id="startingdate" placeholder="Enter the starting date">
+                 <input type="date" class="form-control" id="startingdate_manage" name="startingdate" placeholder="Enter the starting date">
                </div>
                <label class="control-label col-sm-2" for="endingdate">Ending Date:</label>
                <div class="col-sm-2">
-                 <input type="date" class="form-control" id="endingdate" placeholder="Enter the ending date">
+                 <input type="date" class="form-control" id="endingdate_manage" name="endingdate" placeholder="Enter the ending date">
                </div>
              </div>
              <div class="form-group">
                <label class="control-label col-sm-2" for="startingdate">Type of Data:</label>
                <div class="checkbox col-sm-2">
                  <label>
-                   <input type="checkbox" value="">
+                   <input type="checkbox" id="temperature_manage" name="temperature" value="">
                    Temputerature Data
                  </label>
                </div>
                 <div class="checkbox col-sm-2">
                   <label>
-                    <input type="checkbox" value="">
+                    <input type="checkbox" id="humidity_manage" name="humidity" value="">
                     Humidity Data
                   </label>
                 </div>
                  <div class="checkbox col-sm-2">
                    <label>
-                     <input type="checkbox" value="">
+                     <input type="checkbox" id="gas_manage" name="gas" value="">
                      Unhealthy Gas Data
                    </label>
                  </div>
             </div>
             <div class="form-group">        
               <div class="col-sm-10 search">
-                <button type="submit" class="btn btn-default">Search</button>
+                <button type="submit" id="search" class="btn btn-default">Search</button>
               </div>
             </div>
-           </form>
-              
+           </form>  
+           <!-- Automatically generate the table according to the data retrieved from search function-->
+           <div id="table_manage">
+           
+           </div>    
          </div>
        </section>
 
+       <section id="Contactpage">
+       </section>
      </div>
 </body>
 </html>
