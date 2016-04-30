@@ -15,7 +15,7 @@ $spitthisout = [];
 
 try {
   $DBH = new PDO(DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-  $STH = $DBH->query("SELECT * from testGas");
+  $STH = $DBH->query("SELECT * from testGas where name = '$user' and time between '$startingdate' and '$endingdate' ORDER BY time ASC");
   $STH->setFetchMode(PDO::FETCH_OBJ);
  
   while($row = $STH->fetch()) {

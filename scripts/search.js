@@ -27,6 +27,40 @@ function checkBeforeSearch(){
   }
   return canSearch;
 }
+
+function dataProcessAfterSearch(data){
+  if (!$('#temperature_manage').is(':checked')) {
+    for (var i = 0; i < data.length; i++) {
+      for (var obj in data[i]) {
+          delete data[i]['temperature'];
+        }
+      }
+    }
+    if (!$('#humidity_manage').is(':checked')) {
+      for (var i = 0; i < data.length; i++) {
+        for (var obj in data[i]) {
+            delete data[i]['humidity'];
+          }
+        }
+      }
+      if (!$('#gas_manage').is(':checked')) {
+        for (var i = 0; i < data.length; i++) {
+          for (var obj in data[i]) {
+              delete data[i]['gas'];
+            }
+          }
+        }
+    return data;
+  }
+function generateHeaderStr(data){
+    var str = '<thead><tr>';
+    for (var i=0; i<Object.keys(data[0]).length; i++){
+      str = str + '<th>' + Object.keys(data[0])[i] + '</th>';
+    }
+    str = str + '</tr></thead>';
+    return str;
+}
+
 $(document).ready(function() {
   $('#search').click(function() {
     $('#table_manage').empty();
@@ -34,14 +68,17 @@ $(document).ready(function() {
     //var posting = $.post('php/search.php', {'user':welcome, $('#managementform').serialize()});
     console.log($('#managementform').serialize() + '&user='+welcome);
     
-    if(checkBeforeSearch()){
+    if(checkBeforeSearch()){ //Before you can access to the database, you should check whether the condition for search is validate
       $.ajax({
         url: 'php/search.php?user=' + welcome + '&' + $('#managementform').serialize(),
         type: 'GET',
         complete: function(data) {
         test = JSON.parse(data.responseText);
+        //Get rid of the type of the data I don't want
+        test = dataProcessAfterSearch(test);
         var table = $('<table></table>').addClass('table table-hover');
-        table.append('<thead><tr><th>name</th><th>date</th><th>gas</th><th>temperature</th><th>humidity</th></tr></thead>');
+        //Generate the header of the table according to the keys in the key/value pairs in test
+        table.append(generateHeaderStr(test));
         var rows = '<tbody>';
         var row;
         for(var i=0; i<test.length; i++){
