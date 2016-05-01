@@ -279,3 +279,16 @@ header h1 {
     margin: 10px 0 10px 50px;
     font-style: italic;
 }
+
+/* Customized D3 Style */
+.domain {
+    fill: none;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.d3-pathline {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
