@@ -1,3 +1,4 @@
+//record the username who logins to the system right now 
 var welcome = null;
 
 $(document).ready(function() {
@@ -37,5 +38,7 @@ $(document).ready(function() {
       $(".navbar-nav li").filter(".active").removeClass("active");
       $(".navbar-nav li").filter('#Home').addClass("active");
       $('section').hide().filter("#Homepage").show();
+      $('#table_manage').empty();
+      $('#error_manage').empty();
     });
 });

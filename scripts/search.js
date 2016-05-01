@@ -9,11 +9,11 @@ function checkBeforeSearch(){
     $('#error_manage').append('<span class="error">Error:</span> Please try to login first! <br>');
     canSearch = false;
   }
-  if (startingdate == null){
+  if (startingdate == ''){
     $('#error_manage').append('<span class="error">Error:</span> Please enter the startingdate for the data you want to search! <br>');
     canSearch = false;
   }
-  if(endingdate == null){
+  if(endingdate == ''){
     $('#error_manage').append('<span class="error">Error:</span> Please enter the endingdate for the data you want to search! <br>');
     canSearch = false;
   }
@@ -76,7 +76,7 @@ $(document).ready(function() {
         test = JSON.parse(data.responseText);
         //Get rid of the type of the data I don't want
         test = dataProcessAfterSearch(test);
-        var table = $('<table></table>').addClass('table table-hover');
+        var table = $('<table></table>').addClass('table table-hover table-bordered');
         //Generate the header of the table according to the keys in the key/value pairs in test
         table.append(generateHeaderStr(test));
         var rows = '<tbody>';

@@ -240,3 +240,42 @@ header h1 {
     font: normal small-caps 200 1em 'Roboto', sans-serif;
     color: red;
 }
+#Contactpage #contactMe{
+    background-image: url('../images/contact me.png');
+    background-size: cover;
+    width: auto;
+    min-height: 600px;
+    margin: 0 0 0 0;
+}
+
+#contactMe h1{
+    font: normal small-caps 200 3em 'Ubuntu Mono', sans-serif;
+    margin: 0px 0 0 40px;
+    color: orange;
+}
+
+#contactMe h2{
+    font: normal small-caps 200 2.5em 'Ubuntu Mono', sans-serif;
+    margin: 10px 0 0 40px;
+    color: orange;
+}
+
+#contactMe #moreInfo{
+  margin: 20px 0 0 20px;
+  border-style: dashed;
+  border-color: purple;
+  border-width: 2.5px;
+  width: 90%;
+}
+
+#contactMe p:nth-child(2n+1){
+    margin: 10px 0 0 50px;
+    font: normal small-caps 200 1.5em 'Roboto', sans-serif;
+    color: black;
+    text-shadow: .1em .1em 3px purple;
+}
+
+#contactMe p:nth-child(2n){
+    margin: 10px 0 10px 50px;
+    font-style: italic;
+}
