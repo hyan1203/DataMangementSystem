@@ -1,4 +1,6 @@
-var test;
+
+var test;// for storing the data of search result
+
 function checkBeforeSearch(){
   $('#error_manage').empty();
   var canSearch = true;
@@ -88,23 +90,43 @@ $(document).ready(function() {
           for(var obj in test[i]){
             row = row + '<td>'+ test[i][obj]+'</td>';
           }
-          row = row + '<td>'+'<button id="delete_manage" class="btn btn-default">Delete</button>';
+          row = row + '<td>'+'<button class="delete_manage"' + '>Delete</button>';
           rows = rows + row + '</tr>';
         }
         rows = rows + '</tbody>';
         table.append(rows);
         $('#table_manage').append(table);
         //test[0].name
+        
+        //For each delete button equips with a callback function
+        var deleteRow = [];
+        $('.delete_manage').click(function(){
+          //put the value of all tds in a single row to an array
+          $('.delete_manage').parent().parent().children().each(function () {
+            deleteRow.push($(this).html());
+          });
+          if ($(this).parent().parent().parent().children().length == 1) {
+            $('#table_manage').empty();
+          }
+          else {
+            $(this).parent().parent().remove();
+          }
+          //make a string be a valid string to be available to give to php
+          var str_delete = 'user=' + welcome + '&time=' + deleteRow[1];
+          console.log(str_delete);
+          $.ajax({
+            url: 'php/delete.php?' + str_delete,
+            type: 'GET',
+            complete: function(data) {
+              console.log(data.responseText);
+            }
+          });
+          
+        });
+        
       }     
     })
   }
-    //After click Search button, it's gonna post to search.php, the parameters are form items and the current user
-    // var posting = $.post('php/search.php', $('#managementform').serialize()  + '&user='+welcome);
-    // posting.always(function(){
-    //   test = posting.responseText;
-    //   alert(posting.responseText);
-    //  });
-    
      return false;
   });
 });

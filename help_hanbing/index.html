@@ -1,0 +1,30 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+<form id="managementform">
+    <input type="text" name="test">
+    <button type="submit">Submit</button>
+</form>
+
+<div id="result"></div>
+
+
+<script>
+welcome = 'me';
+$('button').on('click', function(e) {
+    e.preventDefault();
+
+    data = '?user=' + welcome + '&' + $('#managementform').serialize();
+
+    $.ajax({
+        url: 'php/search.php' + data,
+        type: 'GET',
+        complete: function(data) {
+            test = data.responseText;
+            console.log(test);
+            $('#result').html(test);
+        }
+    });
+});
+
+
+</script>
