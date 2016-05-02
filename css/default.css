@@ -225,6 +225,7 @@ header h1 {
 #Managementpage h2{
   font: normal small-caps 200 3em 'Roboto', sans-serif;
 }
+
 #Managementpage #managementform{
   border-style: dashed;
   border-color: gray;
@@ -240,6 +241,21 @@ header h1 {
     font: normal small-caps 200 1em 'Roboto', sans-serif;
     color: red;
 }
+/* Visualization page*/
+#Visualizationpage h2{
+  font: normal small-caps 200 3em 'Roboto', sans-serif;
+}
+
+#Visualizationpage .btn-default{
+  margin: 10px 0 0 63px;
+  width: 100px;
+} 
+
+#vs_error_manage span{
+  font: normal small-caps 200 1em 'Roboto', sans-serif;
+  color: red;
+}
+/* Contact me page*/
 #Contactpage #contactMe{
     background-image: url('../images/contact me.png');
     background-size: cover;
@@ -278,4 +294,17 @@ header h1 {
 #contactMe p:nth-child(2n){
     margin: 10px 0 10px 50px;
     font-style: italic;
+}
+
+/* Customized D3 Style */
+.domain {
+    fill: none;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.d3-pathline {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
 }

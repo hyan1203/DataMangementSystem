@@ -11,19 +11,22 @@
     <meta property="og:description" content="">
 
     <script src="libs/jquery-1.10.2.min.js"></script>
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/default.css">
     <script src="libs/underscore-1.5.2.min.js"></script>
     <script src="libs/marked.js"></script><!--https://github.com/chjj/marked/-->
     <script src="libs/analytics.js"></script>
+    <script src="libs/d3.v3.min.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/register.js"></script>
     <script src="scripts/login.js"></script>
     <script src="scripts/search.js"></script>
     <script src="scripts/delete.js"></script>
+    <script src="scripts/visualization.js"></script>
 </head>
+
 <body>
     <div class="container" id="wrap">
         <header>
@@ -38,6 +41,7 @@
                 <div>
                     <ul class="nav navbar-nav">
                         <li class="active" id="Home"><a href="#">Home</a></li>
+			<!--
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Data Chart <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Temperature</a></li>
@@ -46,6 +50,8 @@
                                 <li><a href="#">PM2.5</a></li>
                             </ul>
                         </li>
+			-->
+			                 <li id="Visualization"><a href="#">Visualization</a></li>
                         <li id="Management"><a href="#">Personal Data</a></li>
                         <li id="Contact"><a href="#">Contact Me</a></li>
                     </ul>
@@ -120,7 +126,53 @@
 		        </form>
            </div>
        </section>
-       
+
+       <!--Visualization Tag -->
+       <section id="Visualizationpage">
+         <div class="container">
+           <h2>Data Visualization</h2>
+           <form class="form-horizontal dataentry" id="vs_form" method="post" action="">
+             <div class="form-group">
+               <label class="control-label col-sm-2" for="vs_startingdate">Starting Date:</label>
+               <div class="col-sm-2">
+                 <input type="date" class="form-control" id="vs_startingdate_manage" name="vs_startingdate" placeholder="Enter the starting date">
+               </div>
+               <label class="control-label col-sm-2" for="vs_endingdate">Ending Date:</label>
+               <div class="col-sm-2">
+                 <input type="date" class="form-control" id="vs_endingdate_manage" name="vs_endingdate" placeholder="Enter the ending date">
+               </div>
+             </div>
+             <div class="form-group">
+               <label class="control-label col-sm-2" for="vs_startingdate">Type of Data:</label>
+                 <label class="radio-inline">
+                   <input type="radio" id="vs_temperature_manage" name="vs_data" value="temperature" checked>
+                   Temputerature Data
+                 </label>
+                  <label class="radio-inline">
+                    <input type="radio" id="vs_humidity_manage" name="vs_data" value="humidity">
+                    Humidity Data
+                  </label>
+                   <label class="radio-inline">
+                     <input type="radio" id="vs_gas_manage" name="vs_data" value="gas">
+                     Unhealthy Gas Data
+                   </label>
+            </div>
+            <div class="form-group">        
+              <div class="col-sm-10 visualize">
+                <button type="submit" id="visualize" class="btn btn-default">Visualize</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class='col-sm-offset-1' id="vs_error_manage"></div>
+           </div>
+           </form>  
+           <!-- Automatically generate the visualization view according to the data retrieved from search function-->
+           <div id="visual">
+           </div>    
+         </div>
+ 
+       </section> 
+
        <!--Management Tag -->
        <section id="Managementpage">
          <div class="container">

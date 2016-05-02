@@ -40,5 +40,7 @@ $(document).ready(function() {
       $('section').hide().filter("#Homepage").show();
       $('#table_manage').empty();
       $('#error_manage').empty();
+      $('#visual').empty();
+      $('#vs_error_manage').empty();
     });
 });
